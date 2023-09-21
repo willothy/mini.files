@@ -629,6 +629,8 @@ MiniFiles.config = {
     width_nofocus = 15,
     -- Width of preview window
     width_preview = 25,
+    -- Window borders
+    border = "single"
   },
 }
 --minidoc_afterlines_end
@@ -2035,7 +2037,7 @@ end
 H.window_open = function(buf_id, config)
   -- Add always the same extra data
   config.anchor = 'NW'
-  config.border = 'single'
+  config.border = MiniFiles.config.windows.border or "single"
   config.focusable = true
   config.relative = 'editor'
   config.style = 'minimal'
